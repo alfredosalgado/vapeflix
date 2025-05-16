@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
   if (btn) {
     btn.addEventListener('click', function (event) {
       event.preventDefault(); // Evita que el navegador siga el enlace `href`
-      const phone = '56992763835'; // Número de teléfono
+      const phone = '56965527123'; // Número de teléfono
       const message = 'Hola, me interesa obtener más información.';
       window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`, '_blank');
     });
@@ -339,9 +339,9 @@ const products = [
     }
   },
   {
-    title: "Detergente Biosheep con Blanqueador Optico",
-    description: "5 Litros - Resalta blancos y aviva colores",
-    price: "$2190",
+    title: "SWFT Dual Mesh 30000 Puff Apple Mango Melon",
+    description: "Vape desechable de alto rendimiento con mezcla tropical y tecnología avanzada.",
+    price: "$26.000",
     image: "./assets/img/productos/producto2.png",
     specs: {
       sabor: "Mezcla tropical de manzana crujiente, mango jugoso y melón refrescante",
@@ -356,9 +356,9 @@ const products = [
     }
   },
   {
-    title: "Limpia Pisos Floral Biosheep",
-    description: "5 Litros - Limpiador con desinfectante mata gérmenes al 99%",
-    price: "$1990",
+    title: "SWFT Dual Mesh 30000 Puff Apple Mango Melon",
+    description: "Vape desechable de alto rendimiento con mezcla tropical y tecnología avanzada.",
+    price: "$26.000",
     image: "./assets/img/productos/producto3.png",
     specs: {
       sabor: "Mezcla tropical de manzana crujiente, mango jugoso y melón refrescante",
@@ -371,7 +371,7 @@ const products = [
       pantalla: "LCD para controlar niveles de líquido y batería",
       modosPotencia: "Tres opciones de potencia personalizable"
     }
-  }
+  },
 ];
 
 function generateCards() {
