@@ -375,7 +375,14 @@
   padding: 4rem 2rem;
   
   min-height: 100vh;
-  background-color: #f9f9f9;
+  background: linear-gradient(
+  to bottom,
+  #111111 0%,
+  #111111 20%,
+  #220000 40%,
+  #111111 60%,
+  #111111 100%
+);
   text-align: center;
   padding-top: 150px;
 }
@@ -913,8 +920,6 @@ input, textarea {
 
 
 
-
-
 /* Estilo para las cards */
 .card {
   transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave para el agrandamiento y la sombra */
@@ -922,12 +927,15 @@ input, textarea {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil por defecto */
   border-radius: 15px; /* Bordes ligeramente redondeados para suavizar el diseño */
   overflow: hidden; /* Asegura que las imágenes no sobresalgan */
+  background-color: #0a0a0a54;
 }
 
 /* Efecto al pasar el mouse */
 .card:hover {
   transform: scale(1.05); /* Agranda la card un 5% */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada al hacer hover */
+  box-shadow: 0 8px 16px rgba(255, 254, 254, 0.952); /* Sombra más pronunciada al hacer hover */
+  background-color: #111111;
+
 }
 
 /* Estilo para las imágenes dentro de las cards */
@@ -939,6 +947,104 @@ input, textarea {
 .card:hover .card-img-top {
   transform: scale(1.05); /* La imagen también se agranda ligeramente */
 }
+
+
+.tituloc {
+  
+  color: #ffffff;
+  font-size: 1.5rem;
+}
+
+.ctext {
+  height: 5 rem;
+  padding-bottom: 0.5rem;
+  color: #b1dbf0;
+  font-size: 1.1rem;
+}
+
+.im {
+  height: auto;
+  width: 100%;
+  padding: 15px;
+}
+
+.card-text {
+  font-weight: 800;
+  font-size: 1rem;
+  font-style: normal;
+  color: #68b302;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+
+
+
+
+/* Estilo para el botón Lo Quiero */
+.btn-whatsapp {
+  background-color: #68b302; /* Color verde de WhatsApp */
+  color: white;
+  border-radius: 25px;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+/* Efecto al pasar el mouse */
+.btn-whatsapp:hover {
+  background-color: #3864db; /* Verde más oscuro al pasar el mouse */
+  color: #ffffff;
+  transform: scale(1.05); /* Agranda ligeramente el botón */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para el efecto flotante */
+}
+
+
+/* en tu <head> dentro de <style> o en tu CSS externo */
+.specs li {
+  color: #ffffff; /* cámbialo al color que prefieras */
+}
+.specs li strong {
+  color: #e74c3c; /* si quieres que la etiqueta (etiqueta:valor) tenga otro tono */
+}
+
+
+/* Estilo base para el botón */
+.btn-vermas {
+  display: inline-flex;
+  align-items: center;
+  
+  gap: 0.3em;
+  background: linear-gradient(135deg, #fc02024d, #00000069);
+  color: #fff;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 2rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+/* Hover suave */
+.btn-vermas:hover {
+  background: linear-gradient(135deg, #f06595, #ff6b6b);
+  transform: translateY(-1px);
+}
+
+/* Focus accesible */
+.btn-vermas:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.2rem rgb(218, 5, 218);
+}
+
+
+
 
 
 
@@ -1054,43 +1160,6 @@ html, body {
 
 
 
-.btn-serv {
-  display: inline-block;
- border: 2px solid #006a9f;
-  color: rgb(10, 0, 0);
-  padding: 12px 20px;
-  margin:auto;
-  font-size: 14px;
-  font-weight: bold;
-  text-decoration: none;
-  border-radius: 8px;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.btn-serv:hover {
-  background-color: #006a9f; /* Color más oscuro al pasar el mouse */
-  transform: scale(1.05); /* Pequeño efecto de agrandamiento */
-  color: rgb(255, 255, 255);
-}
-
-.btn-serv2 {
-  display: inline-block;
- border: 2px solid #55263f;
-  color: rgb(10, 0, 0);
-  padding: 20px 20px;
-  margin:auto;
-  font-size: 34px;
-  font-weight: bold;
-  text-decoration: none;
-  border-radius: 8px;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.btn-serv2:hover {
-  background-color: #55263f; /* Color más oscuro al pasar el mouse */
-  transform: scale(1.05); /* Pequeño efecto de agrandamiento */
-  color: rgb(255, 255, 255);
-}
 
 
 
@@ -1098,53 +1167,13 @@ html, body {
 
 
 
-.tituloserv {
-  font-size: 1.2rem;
-  
-}
-
-.heightcont {
-  height: 7rem;
-}
-
-.widthicono {
-  width: 15%;
-}
-
-.card2 {
-  background-color: rgba(255, 255, 255, 0.863);
-}
-
-.card:hover {
-  background-color: white;
-}
-
-a {
-  text-decoration: none;
-  text-decoration-color: white; /* Cambia el color de la línea (subrayado) */
-}
 
 
 
-.btn {
-  display: inline-block;
- border: 2px solid #55263f;
- background-color: white;
-  color: rgb(10, 0, 0);
-  padding: 12px 20px;
-  margin:auto;
-  font-size: 14px;
-  font-weight: bold;
-  text-decoration: none;
-  border-radius: 8px;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
 
-.btn:hover {
-  background-color: #55263f; /* Color más oscuro al pasar el mouse */
-  transform: scale(1.05); /* Pequeño efecto de agrandamiento */
-  color: rgb(255, 255, 255);
-}
+
+
+
 
 
 
@@ -1153,57 +1182,44 @@ a {
 
 
 @media (min-width: 768px) {
-  
-  .tituloserv {
-    font-size: 1.2rem;
-  }
-  .texth0 {
+  .tituloc {
     height: 8rem;
+    font-size: 1.5rem;
   }
-
-  .texth1 {
-    height: 37rem;
-  }
-
-  .texth4 {
-    height: 48rem;
-  }
-
-  .heightcont {
+  
+  .ctext {
     height: 7rem;
+    padding-bottom: 0.5rem;
+    font-size: 1.1rem;
   }
-
-  .heightcont2 {
-    height: 5rem;
-  }
+  
 }
 
 @media (min-width: 1000px) {
-  .texth0 {
-    height: 8rem;
-    font-size: 1.2rem;
+  .tituloc {
+    height: 6rem;
+    font-size: 1.5rem;
   }
-
-  .texth1 {
-    height: 26rem;
-  }
-
-  .texth4 {
-    height: 37rem;
+  
+  .ctext {
+    height: 6rem;
+    padding-bottom: 0.5rem;
+    font-size: 1.1rem;
   }
 }
 
 @media (min-width: 1200px) {
-  .texth0 {
-    height: 7rem;
-    font-size: 1.2rem;
+  .tituloc {
+    height: 4rem;
+    font-size: 1.5rem;
   }
-
-  .texth1 {
-    height: 31rem;
-  }
-
-  .texth4 {
-    height: 27rem;
+  
+  .ctext {
+    height: 5rem;
+    padding-bottom: 0.5rem;
+    font-size: 1.1rem;
   }
 }
+
+
+

@@ -317,6 +317,123 @@ document.querySelectorAll('.nav-link').forEach(link => {
 
 
 
+// js/script.js
+
+// Array de productos (igual que antes)
+const products = [
+  {
+    title: "SWFT Dual Mesh 30000 Puff Apple Mango Melon",
+    description: "Vape desechable de alto rendimiento con mezcla tropical y tecnología avanzada.",
+    price: "$26.000",
+    image: "./assets/img/productos/producto1.png",
+    specs: {
+      sabor: "Mezcla tropical de manzana crujiente, mango jugoso y melón refrescante",
+      capacidadLiquido: "24 ml",
+      bateria: "800 mAh",
+      resistencia: "Dual Mesh Coil para una experiencia de vapeo uniforme",
+      puffs: "Hasta 30,000 inhalaciones",
+      puertoCarga: "Tipo-C",
+      nicotina: "5% (50 mg)",
+      pantalla: "LCD para controlar niveles de líquido y batería",
+      modosPotencia: "Tres opciones de potencia personalizable"
+    }
+  },
+  {
+    title: "Detergente Biosheep con Blanqueador Optico",
+    description: "5 Litros - Resalta blancos y aviva colores",
+    price: "$2190",
+    image: "./assets/img/productos/producto2.png",
+    specs: {
+      sabor: "Mezcla tropical de manzana crujiente, mango jugoso y melón refrescante",
+      capacidadLiquido: "24 ml",
+      bateria: "800 mAh",
+      resistencia: "Dual Mesh Coil para una experiencia de vapeo uniforme",
+      puffs: "Hasta 30,000 inhalaciones",
+      puertoCarga: "Tipo-C",
+      nicotina: "5% (50 mg)",
+      pantalla: "LCD para controlar niveles de líquido y batería",
+      modosPotencia: "Tres opciones de potencia personalizable"
+    }
+  },
+  {
+    title: "Limpia Pisos Floral Biosheep",
+    description: "5 Litros - Limpiador con desinfectante mata gérmenes al 99%",
+    price: "$1990",
+    image: "./assets/img/productos/producto3.png",
+    specs: {
+      sabor: "Mezcla tropical de manzana crujiente, mango jugoso y melón refrescante",
+      capacidadLiquido: "24 ml",
+      bateria: "800 mAh",
+      resistencia: "Dual Mesh Coil para una experiencia de vapeo uniforme",
+      puffs: "Hasta 30,000 inhalaciones",
+      puertoCarga: "Tipo-C",
+      nicotina: "5% (50 mg)",
+      pantalla: "LCD para controlar niveles de líquido y batería",
+      modosPotencia: "Tres opciones de potencia personalizable"
+    }
+  }
+];
+
+function generateCards() {
+  const container = document.getElementById('product-container');
+  container.innerHTML = '';
+
+  products.forEach((product, idx) => {
+    const paymentLink = `pago.html?title=${encodeURIComponent(product.title)}&price=${encodeURIComponent(product.price)}&image=${encodeURIComponent(product.image)}`;
+
+    // Generamos specs (si existen)
+    let specsHTML = '';
+    if (product.specs) {
+      let items = '';
+      for (const [key, value] of Object.entries(product.specs)) {
+        const label = key.charAt(0).toUpperCase() + key.slice(1);
+        items += `<li><strong>${label}:</strong> ${value}</li>`;
+      }
+
+      specsHTML = `
+        <button class="btn btn-link btn-vermas" type="button">Especificaciones ▾</button>
+        <div class="specs-container" style="display: none;">
+          <ul class="specs text-start small ps-3 mb-3">
+            ${items}
+          </ul>
+        </div>
+      `;
+    }
+
+    // Montamos la card
+    const cardHTML = `
+      <div class="col-12 col-md-4 col-lg-4 d-flex justify-content-center">
+        <div class="card">
+          <img src="${product.image}" class="card-img-top im" alt="${product.title}">
+          <div class="card-body pt-3">
+            <h5 class="card-title tituloc">${product.title}</h5>
+            <p class="ctext mb-2">${product.description}</p>
+            ${specsHTML}
+            <p class="card-text h5 text-center">${product.price}</p>
+            <div class="text-center">
+              <a href="${paymentLink}" class="btn btn-whatsapp">Lo quiero</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+
+    // Insertamos y luego vinculamos el toggle
+    container.insertAdjacentHTML('beforeend', cardHTML);
+    if (product.specs) {
+      const lastCard = container.lastElementChild;
+      const btn = lastCard.querySelector('.btn-vermas');
+      const specsDiv = lastCard.querySelector('.specs-container');
+      btn.addEventListener('click', () => {
+        const isHidden = specsDiv.style.display === 'none';
+        specsDiv.style.display = isHidden ? 'block' : 'none';
+        btn.textContent = isHidden ? 'Ver menos ▴' : 'Especificaciones ▾';
+      });
+    }
+  });
+}
+
+document.addEventListener('DOMContentLoaded', generateCards);
 
 
 
