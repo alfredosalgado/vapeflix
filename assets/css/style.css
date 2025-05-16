@@ -108,6 +108,7 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  padding: 0;
 }
 
 .hero-overlay {
@@ -191,6 +192,10 @@
   }
   .hero-section {
     height: auto;
+    
+  }
+
+  .hero-overlay {
     padding: 40px 20px;
   }
 
